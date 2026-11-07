@@ -162,7 +162,7 @@ def page(t, imgp):
     w = t['wel']
     return f"""<!DOCTYPE html><html lang="{t['lang']}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{E(t['title'])}</title><meta name="description" content="{E(t['cover_sub'])}">
-<meta property="og:title" content="{E(t['title'])}: {E(t['cover_h'])}"><meta property="og:description" content="{E(t['cover_sub'])}">
+<meta property="og:title" content="{E(t['title'])}: {E(t['cover_h'])}"><meta property="og:description" content="{E(t['cover_sub'])}"><meta property="og:image" content="https://magasin.daramag.com/01/img/forside-{t['lang']}.jpg"><meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
 <style>{CSS}</style></head><body><div class="wrap">
 <nav class="topbar"><a href="https://www.daramag.com" target="_blank" rel="noopener"><b>daramag.com</b></a><span><a href="{t['more_url']}" target="_blank" rel="noopener">{E(t['nav_all'])}</a><a href="#abonner">{E(t['nav_sub'])}</a></span></nav>
