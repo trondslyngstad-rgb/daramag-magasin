@@ -38,7 +38,7 @@ T = {
  over_lab='OVERHEARD', quote='“The clearly intentional and systematic nature of Facebook’s repeated misstatements.”', quote_by='Judge Francis Mathew, in his ruling ordering Meta to pay 25 billion dollars.',
  try_lab='TRY THIS WEEK', try_h='Three small checks, five minutes',
  tries=[('Open the ad settings in Facebook or Instagram.','Which choice did you make, and do you remember making it?'),('Check your smartwatch or fitness app.','Which apps get your health data?'),('Have you taken a DNA test?','Look up how to delete your data and have the sample destroyed.')],
- turn_lab='YOUR TURN', turn='What would you have charged Meta for your data last year?', turn_btn='Discuss on DARA ↗', turn_note='Opens the conversation on daramag.com in a new tab.', sub_h='Get DARA The Week every Saturday', sub_note='Free. Unsubscribe whenever you like.', copied='Link copied',
+ turn_lab='YOUR TURN', turn='What would you have charged Meta for your data last year?', turn_btn='Discuss on DARA ↗', turn_note='Opens the conversation on daramag.com in a new tab.', sub_h='Get DARA The Week every Saturday', sub_note='Free. Unsubscribe whenever you like.', copied='Link copied', copy='Copy link',
  foot_h='Know someone who should read this?', foot='Send it to one person. All our sources are in the', lib='DARA Source Library', see='See you next Saturday.', share='Share DARA', sub_btn='Subscribe for free', credit='Cover photo: Todd Jiang / Unsplash. Published by DARA Redaksjonen.'),
 'no': dict(
  lang='no', title='DARA The Week · Utgave 01', tagline='Data, verdi og deg. Hvem som tjener på dataene dine, hver lørdag.',
@@ -65,7 +65,7 @@ T = {
  over_lab='HØRT DENNE UKA', quote='«The clearly intentional and systematic nature of Facebook’s repeated misstatements.»', quote_by='Dommer Francis Mathew i dommen mot Meta. På norsk: at Facebooks gjentatte villedende utsagn var tydelig bevisste og systematiske.',
  try_lab='PRØV DENNE UKA', try_h='Tre små sjekker, fem minutter',
  tries=[('Åpne annonseinnstillingene i Facebook eller Instagram.','Hvilket valg tok du, og husker du at du tok det?'),('Sjekk smartklokka eller treningsappen.','Hvilke apper får helsedataene dine?'),('Har du tatt en DNA-test?','Finn ut hvordan du sletter dataene og får prøven destruert.')],
- turn_lab='DIN TUR', turn='Hva ville du tatt betalt av Meta for dataene dine i fjor?', turn_btn='Diskuter på DARA ↗', turn_note='Åpner samtalen på daramag.com i en ny fane.', sub_h='Få DARA The Week hver lørdag', sub_note='Gratis. Du kan melde deg av når du vil.', copied='Lenken er kopiert',
+ turn_lab='DIN TUR', turn='Hva ville du tatt betalt av Meta for dataene dine i fjor?', turn_btn='Diskuter på DARA ↗', turn_note='Åpner samtalen på daramag.com i en ny fane.', sub_h='Få DARA The Week hver lørdag', sub_note='Gratis. Du kan melde deg av når du vil.', copied='Lenken er kopiert', copy='Kopier lenke',
  foot_h='Kjenner du noen som burde lese dette?', foot='Send det til én person. Alle kildene våre ligger i', lib='DARA-kildebiblioteket', see='Vi ses neste lørdag.', share='Del DARA', sub_btn='Abonner gratis', credit='Forsidefoto: Todd Jiang / Unsplash. Utgitt av DARA Redaksjonen.'),
 }
 
@@ -175,14 +175,15 @@ def page(t, imgp):
 <section class="turn"><div class="lab">{E(t['turn_lab'])}</div><p>{E(t['turn'])}</p><a class="btn o" href="{t['post']}#comments" target="_blank" rel="noopener">{E(t['turn_btn'])}</a><p class="note">{E(t['turn_note'])}</p></section>
 <section class="subbox"><h4>{E(t['sub_h'])}</h4><iframe src="https://www.daramag.com/embed" title="{E(t['sub_h'])}" loading="lazy" scrolling="no"></iframe><p class="note">{E(t['sub_note'])}</p></section>
 <footer class="foot"><div class="r"><div><h4>{E(t['foot_h'])}</h4><p>{E(t['foot'])} <a href="https://www.daramag.com/p/sources" target="_blank" rel="noopener">{E(t['lib'])} ↗</a>. {E(t['see'])}</p></div>
-<div class="btns"><button class="btn g" id="share" type="button">{E(t['share'])}</button><span id="ok" class="ok" hidden>{E(t['copied'])}</span></div></div>
+<div class="btns"><button class="btn g" id="copy" type="button">{E(t['copy'])}</button><button class="btn w" id="share" type="button" hidden>{E(t['share'])}</button><span id="ok" class="ok" hidden>{E(t['copied'])}</span></div></div>
 <div class="cr">{E(t['credit'])} <a href="https://www.daramag.com" target="_blank" rel="noopener">daramag.com ↗</a></div></footer>
 </div>
 <script>
-document.getElementById('share').addEventListener('click',async()=>{{const d={{title:document.title,url:location.href}};
-try{{if(navigator.share){{await navigator.share(d);return;}}}}catch(e){{return;}}
-try{{await navigator.clipboard.writeText(location.href);}}catch(e){{}}
-const ok=document.getElementById('ok');ok.hidden=false;setTimeout(()=>ok.hidden=true,2500);}});
+const ok=document.getElementById('ok'),sh=document.getElementById('share');
+document.getElementById('copy').addEventListener('click',async()=>{{
+try{{await navigator.clipboard.writeText(location.href);}}catch(e){{const i=document.createElement('input');i.value=location.href;document.body.appendChild(i);i.select();document.execCommand('copy');i.remove();}}
+ok.hidden=false;setTimeout(()=>ok.hidden=true,2500);}});
+if(navigator.share){{sh.hidden=false;sh.addEventListener('click',()=>navigator.share({{title:document.title,url:location.href}}).catch(()=>{{}}));}}
 </script></body></html>"""
 
 open('01/index.html', 'w').write(page(T['en'], 'img/'))

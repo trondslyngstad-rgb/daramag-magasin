@@ -90,12 +90,13 @@ button.btn{border:0;cursor:pointer}.ok{font-family:Inter,Arial,sans-serif;font-s
 <section class="turn"><div class="lab">YOUR TURN</div><p>What would you have charged Meta for your data last year?</p><a class="btn o" href="https://www.daramag.com/p/dara-the-week-issue-1#comments" target="_blank" rel="noopener">Discuss on DARA ↗</a><p class="note">Opens the conversation on daramag.com in a new tab.</p></section>
 <section class="subbox"><h4>Get DARA The Week every Saturday</h4><iframe src="https://www.daramag.com/embed" title="Get DARA The Week every Saturday" loading="lazy" scrolling="no"></iframe><p class="note">Free. Unsubscribe whenever you like.</p></section>
 <footer class="foot"><div class="r"><div><h4>Know someone who should read this?</h4><p>Send it to one person. All our sources are in the <a href="https://www.daramag.com/p/sources" target="_blank" rel="noopener">DARA Source Library ↗</a>. See you next Saturday.</p></div>
-<div class="btns"><button class="btn g" id="share" type="button">Share DARA</button><span id="ok" class="ok" hidden>Link copied</span></div></div>
+<div class="btns"><button class="btn g" id="copy" type="button">Copy link</button><button class="btn w" id="share" type="button" hidden>Share DARA</button><span id="ok" class="ok" hidden>Link copied</span></div></div>
 <div class="cr">Cover photo: Todd Jiang / Unsplash. Published by DARA Redaksjonen. <a href="https://www.daramag.com" target="_blank" rel="noopener">daramag.com ↗</a></div></footer>
 </div>
 <script>
-document.getElementById('share').addEventListener('click',async()=>{const d={title:document.title,url:location.href};
-try{if(navigator.share){await navigator.share(d);return;}}catch(e){return;}
-try{await navigator.clipboard.writeText(location.href);}catch(e){}
-const ok=document.getElementById('ok');ok.hidden=false;setTimeout(()=>ok.hidden=true,2500);});
+const ok=document.getElementById('ok'),sh=document.getElementById('share');
+document.getElementById('copy').addEventListener('click',async()=>{
+try{await navigator.clipboard.writeText(location.href);}catch(e){const i=document.createElement('input');i.value=location.href;document.body.appendChild(i);i.select();document.execCommand('copy');i.remove();}
+ok.hidden=false;setTimeout(()=>ok.hidden=true,2500);});
+if(navigator.share){sh.hidden=false;sh.addEventListener('click',()=>navigator.share({title:document.title,url:location.href}).catch(()=>{}));}
 </script></body></html>
