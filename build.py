@@ -2,8 +2,8 @@ import html, os
 E = html.escape
 
 SRC = {
- 'dr': ('The Daily Record', 'https://thedailyrecord.com/2026/10/21/new-mexico-orders-meta-pay-25-billion-data-privacy/'),
- 'bg': ('Bloomberg Government', 'https://news.bgov.com/esg/meta-to-pay-historic-25-billion-in-new-mexico-deception-case'),
+ 'dr': ('News From The States', 'https://www.newsfromthestates.com/article/new-mexico-judge-orders-meta-pay-state-25b'),
+ 'bg': ('News From The States', 'https://www.newsfromthestates.com/article/new-mexico-judge-orders-meta-pay-state-25b'),
  'meta': ('Meta Q4 2025', 'https://s21.q4cdn.com/399680738/files/doc_financials/2025/q4/Earnings-Presentation-Q4-2025-FINAL.pdf'),
  'ips': ('Ipsos', 'https://www.ipsos.com/nb-no/topic/some'),
  'mw': ('Malwarebytes', 'https://www.malwarebytes.com/blog/news/2026/07/samsung-backs-down-on-threat-to-delete-health-data'),
@@ -30,12 +30,12 @@ T = {
   'Meta says it does not sell user data and plans to appeal. In 2019, the US Federal Trade Commission fined Meta 5 billion dollars. This penalty is five times larger, from a single state.'],
  story_end='When broken privacy promises cost billions, perhaps they will be kept. What have the apps on your phone promised you?',
  srcs='Sources:', src1='Source:',
- num_lab='NOTABLE NUMBERS', nums=[('$25bn','Penalty a New Mexico judge ordered Meta to pay for misleading users about their data.','THE DAILY RECORD'),('$57','Meta’s revenue per daily user in 2025, by the company’s own figures.','META, Q4 2025'),('7 mill.','Nearly that many customers were hit by the 2023 data breach at 23andMe, the DNA test company.','CALIFORNIA DOJ')],
+ num_lab='NOTABLE NUMBERS', nums=[('$25bn','Penalty a New Mexico judge ordered Meta to pay for misleading users about their data.','NEWS FROM THE STATES'),('$57','Meta’s revenue per daily user in 2025, by the company’s own figures.','META, Q4 2025'),('7 mill.','Nearly that many customers were hit by the 2023 data breach at 23andMe, the DNA test company.','CALIFORNIA DOJ')],
  also='ALSO THIS WEEK',
  cards=[('meta57','A smartphone next to a cup of coffee and a croissant','YOUR VALUE','What were you worth to Meta last year?','About 57 dollars. That is Meta’s own figure for revenue per daily user across Facebook, Instagram, WhatsApp and Messenger in 2025. Alone, you are worth a dinner out. Together, the users are the whole business model. What if we negotiated as a group?',['meta','ips'],'Photo: Theo Lonic / Unsplash'),
         ('klokke','A smartwatch with a white strap on a wrist','HEALTH DATA','Samsung asked for your pulse. Saying no came with a threat','In July, Samsung Health asked for consent to train AI on sleep, heart rate and medical data. If you said no, a warning said your health data would be deleted. After protests, Samsung backed down. A yes under threat is not a real choice.',['mw'],'Photo: Sabina / Unsplash'),
         ('dna','A smiling family of four against a light wooden wall','DNA','Your DNA can end up in a bankruptcy','When 23andMe went bankrupt in 2025, customers’ genetic data and spit samples were sold to a nonprofit led by the company’s own cofounder. California objected to the sale but lost in court. Now the state has agreed a 6 million dollar settlement over a 2023 data breach that hit nearly 7 million customers. A court must still approve it. Customers can still ask to have their data deleted.',['ca'],'Photo: Subash Than / Unsplash')],
- over_lab='OVERHEARD', quote='“The clearly intentional and systemic nature of Facebook’s repeated misstatements.”', quote_by='Judge Francis Mathew, in his ruling ordering Meta to pay 25 billion dollars.',
+ over_lab='OVERHEARD', quote='“The clearly intentional and systematic nature of Facebook’s repeated misstatements.”', quote_by='Judge Francis Mathew, in his ruling ordering Meta to pay 25 billion dollars.',
  try_lab='TRY THIS WEEK', try_h='Three small checks, five minutes',
  tries=[('Open the ad settings in Facebook or Instagram.','Which choice did you make, and do you remember making it?'),('Check your smartwatch or fitness app.','Which apps get your health data?'),('Have you taken a DNA test?','Look up how to delete your data and have the sample destroyed.')],
  turn_lab='YOUR TURN', turn='What would you have charged Meta for your data last year?', turn_btn='Discuss on DARA ↗', turn_note='Opens the conversation on daramag.com in a new tab.', sub_h='Get DARA The Week every Saturday', sub_note='Free. Unsubscribe whenever you like.', copied='Link copied',
@@ -57,12 +57,12 @@ T = {
   'Meta sier at selskapet ikke selger brukerdata, og vil anke. I 2019 fikk Meta en bot på 5 milliarder dollar fra handelsmyndigheten FTC. Denne gangen er beløpet fem ganger så stort, fra én enkelt delstat.'],
  story_end='Når brutte personvernløfter koster milliarder, blir de kanskje holdt. Hva har appene på telefonen din lovet deg?',
  srcs='Kilder:', src1='Kilde:',
- num_lab='UKENS TALL', nums=[('25 mrd. $','Straffen en dommer i New Mexico ga Meta for å ha villedet brukerne om dataene deres.','THE DAILY RECORD'),('57 $','Metas inntekt per daglige bruker i 2025, ifølge selskapets egne tall.','META, 4. KVARTAL 2025'),('7 mill.','Nesten så mange kunder ble rammet da DNA-selskapet 23andMe ble hacket i 2023.','CALIFORNIAS JUSTISDEPARTEMENT')],
+ num_lab='UKENS TALL', nums=[('25 mrd. $','Straffen en dommer i New Mexico ga Meta for å ha villedet brukerne om dataene deres.','NEWS FROM THE STATES'),('57 $','Metas inntekt per daglige bruker i 2025, ifølge selskapets egne tall.','META, 4. KVARTAL 2025'),('7 mill.','Nesten så mange kunder ble rammet da DNA-selskapet 23andMe ble hacket i 2023.','CALIFORNIAS JUSTISDEPARTEMENT')],
  also='OGSÅ DENNE UKA',
  cards=[('meta57','En mobil ved siden av en kaffekopp og en croissant','DIN VERDI','Hva var du verdt for Meta i fjor?','Rundt 57 dollar. Det er Metas eget tall for inntekt per daglige bruker på Facebook, Instagram, WhatsApp og Messenger i 2025. Alene er du verdt en middag ute. Sammen er brukerne hele forretningsmodellen. Hva om vi forhandlet sammen?',['meta','ips'],'Foto: Theo Lonic / Unsplash'),
         ('klokke','En smartklokke med hvit reim på et håndledd','HELSEDATA','Samsung ba om pulsen din. Et nei kom med en trussel','I juli ba Samsung Health om lov til å trene KI på søvn, puls og helsedata. Sa du nei, fikk du en advarsel om at helsedataene ville bli slettet. Etter protester snudde Samsung. Et ja under trussel er ikke et ekte valg.',['mw'],'Foto: Sabina / Unsplash'),
         ('dna','En smilende familie på fire foran en lys trevegg','DNA','DNA-en din kan havne i et konkursbo','Da 23andMe gikk konkurs i 2025, ble kundenes genetiske data og spyttprøver solgt til en stiftelse ledet av selskapets egen medgründer. California protesterte mot salget, men tapte i retten. Nå har staten inngått et forlik på 6 millioner dollar om et datainnbrudd i 2023, som rammet nesten 7 millioner kunder. Retten må fortsatt godkjenne det. Kundene kan fortsatt be om å få dataene slettet.',['ca'],'Foto: Subash Than / Unsplash')],
- over_lab='HØRT DENNE UKA', quote='«The clearly intentional and systemic nature of Facebook’s repeated misstatements.»', quote_by='Dommer Francis Mathew i dommen mot Meta. På norsk: at Facebooks gjentatte villedende utsagn var tydelig bevisste og systematiske.',
+ over_lab='HØRT DENNE UKA', quote='«The clearly intentional and systematic nature of Facebook’s repeated misstatements.»', quote_by='Dommer Francis Mathew i dommen mot Meta. På norsk: at Facebooks gjentatte villedende utsagn var tydelig bevisste og systematiske.',
  try_lab='PRØV DENNE UKA', try_h='Tre små sjekker, fem minutter',
  tries=[('Åpne annonseinnstillingene i Facebook eller Instagram.','Hvilket valg tok du, og husker du at du tok det?'),('Sjekk smartklokka eller treningsappen.','Hvilke apper får helsedataene dine?'),('Har du tatt en DNA-test?','Finn ut hvordan du sletter dataene og får prøven destruert.')],
  turn_lab='DIN TUR', turn='Hva ville du tatt betalt av Meta for dataene dine i fjor?', turn_btn='Diskuter på DARA ↗', turn_note='Åpner samtalen på daramag.com i en ny fane.', sub_h='Få DARA The Week hver lørdag', sub_note='Gratis. Du kan melde deg av når du vil.', copied='Lenken er kopiert',
@@ -151,7 +151,7 @@ def page(t, imgp):
         cards += (f'<div class="card"><img src="{imgp}{img}.jpg" alt="{E(alt)}" loading="lazy"><div class="cr">{E(cr)}</div>'
                   f'<div class="k">{E(k)}</div><h3>{E(h)}</h3><p>{E(p)}</p>{src(t["srcs"] if len(keys)>1 else t["src1"], keys)}</div>')
     cards += (f'<div class="quote"><div class="lab">{E(t["over_lab"])}</div><q>{E(t["quote"])}</q>'
-              f'<p>{E(t["quote_by"])} <a href="{SRC["bg"][1]}" target="_blank" rel="noopener">Bloomberg Government ↗</a></p></div>')
+              f'<p>{E(t["quote_by"])} <a href="{SRC["bg"][1]}" target="_blank" rel="noopener">News From The States ↗</a></p></div>')
     tries = ''.join(f'<div class="s"><div class="n">{i+1}</div><p><strong>{E(a)}</strong> {E(b)}</p></div>' for i, (a, b) in enumerate(t['tries']))
     w = t['wel']
     return f"""<!DOCTYPE html><html lang="{t['lang']}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -168,7 +168,7 @@ def page(t, imgp):
 <p class="sig">DARA Redaksjonen</p><p class="ai">{E(t['ai'])}</p></div>
 <nav class="toc"><div class="lab" style="margin:0">{E(t['toc_lab'])}</div>{toc}</nav></section>
 <article class="story"><div class="rule"></div><div class="lab">{E(t['cover_lab'])}</div><h2>{E(t['cover_h'])}</h2>
-<div class="cols">{story}</div>{src(t['srcs'], ['dr','bg'])}</article>
+<div class="cols">{story}</div>{src(t['src1'], ['dr'])}</article>
 <section class="nums"><div class="lab">{E(t['num_lab'])}</div><div class="g">{nums}</div></section>
 <section class="also"><div class="lab">{E(t['also'])}</div><div class="cards">{cards}</div></section>
 <section class="try"><div class="lab">{E(t['try_lab'])}</div><h2>{E(t['try_h'])}</h2>{tries}</section>
