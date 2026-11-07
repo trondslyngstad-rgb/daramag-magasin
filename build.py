@@ -122,7 +122,7 @@ a{color:#0B1F44}a:hover{color:#8a6a2c}
 .turn{padding:52px 48px 0;text-align:center}
 .turn p{margin:12px auto 0;max-width:600px;font-family:Fraunces,Georgia,serif;font-size:32px;line-height:1.2;color:#0B1F44}
 .btn{display:inline-block;margin-top:22px;padding:14px 24px;border-radius:6px;font-family:Inter,Arial,sans-serif;font-size:15px;font-weight:600;text-decoration:none}
-.btn.o{border:2px solid #0B1F44;color:#0B1F44}.btn.g{background:#C9A15A;color:#0B1F44;font-weight:700}.btn.w{border:2px solid #C9A15A;color:#C9A15A}
+.btn.o{border:2px solid #0B1F44;color:#0B1F44}.btn.g{background:#C9A15A;color:#0B1F44;font-weight:700}.btn.w{border:2px solid #C9A15A;color:#C9A15A;background:transparent}
 .foot{margin-top:56px;background:#0B1F44;color:#d7deea;padding:36px 48px}
 .foot .r{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
 .foot h4{margin:0;font-family:Fraunces,Georgia,serif;font-weight:800;font-size:28px;color:#fff}
