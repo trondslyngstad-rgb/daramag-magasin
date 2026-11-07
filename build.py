@@ -10,7 +10,7 @@ SRC = {
  'ca': ('California DOJ', 'https://oag.ca.gov/news/press-releases/attorney-general-bonta-secures-6-million-settlement-23andme-litigation'),
 }
 def src(lab, keys):
-    return f'<p class="src">{lab} ' + ', '.join(f'<a href="{SRC[k][1]}" target="_blank" rel="noopener">{SRC[k][0]}</a>' for k in keys) + '.</p>'
+    return f'<p class="src">{lab} ' + ', '.join(f'<a href="{SRC[k][1]}" target="_blank" rel="noopener">{SRC[k][0]} ↗</a>' for k in keys) + '.</p>'
 
 T = {
 'en': dict(
@@ -38,7 +38,7 @@ T = {
  over_lab='OVERHEARD', quote='“The clearly intentional and systemic nature of Facebook’s repeated misstatements.”', quote_by='Judge Francis Mathew, in his ruling ordering Meta to pay 25 billion dollars.',
  try_lab='TRY THIS WEEK', try_h='Three small checks, five minutes',
  tries=[('Open the ad settings in Facebook or Instagram.','Which choice did you make, and do you remember making it?'),('Check your smartwatch or fitness app.','Which apps get your health data?'),('Have you taken a DNA test?','Look up how to delete your data and have the sample destroyed.')],
- turn_lab='YOUR TURN', turn='What would you have charged Meta for your data last year?', turn_btn='Answer in the comments',
+ turn_lab='YOUR TURN', turn='What would you have charged Meta for your data last year?', turn_btn='Discuss on DARA ↗', turn_note='Opens the conversation on daramag.com in a new tab.', sub_h='Get DARA The Week every Saturday', sub_note='Free. Unsubscribe whenever you like.', copied='Link copied',
  foot_h='Know someone who should read this?', foot='Send it to one person. All our sources are in the', lib='DARA Source Library', see='See you next Saturday.', share='Share DARA', sub_btn='Subscribe for free', credit='Cover photo: Todd Jiang / Unsplash. Published by DARA Redaksjonen.'),
 'no': dict(
  lang='no', title='DARA The Week · Utgave 01', tagline='Data, verdi og deg. Hvem som tjener på dataene dine, hver lørdag.',
@@ -65,7 +65,7 @@ T = {
  over_lab='HØRT DENNE UKA', quote='«The clearly intentional and systemic nature of Facebook’s repeated misstatements.»', quote_by='Dommer Francis Mathew i dommen mot Meta. På norsk: at Facebooks gjentatte villedende utsagn var tydelig bevisste og systematiske.',
  try_lab='PRØV DENNE UKA', try_h='Tre små sjekker, fem minutter',
  tries=[('Åpne annonseinnstillingene i Facebook eller Instagram.','Hvilket valg tok du, og husker du at du tok det?'),('Sjekk smartklokka eller treningsappen.','Hvilke apper får helsedataene dine?'),('Har du tatt en DNA-test?','Finn ut hvordan du sletter dataene og får prøven destruert.')],
- turn_lab='DIN TUR', turn='Hva ville du tatt betalt av Meta for dataene dine i fjor?', turn_btn='Svar i kommentarfeltet',
+ turn_lab='DIN TUR', turn='Hva ville du tatt betalt av Meta for dataene dine i fjor?', turn_btn='Diskuter på DARA ↗', turn_note='Åpner samtalen på daramag.com i en ny fane.', sub_h='Få DARA The Week hver lørdag', sub_note='Gratis. Du kan melde deg av når du vil.', copied='Lenken er kopiert',
  foot_h='Kjenner du noen som burde lese dette?', foot='Send det til én person. Alle kildene våre ligger i', lib='DARA-kildebiblioteket', see='Vi ses neste lørdag.', share='Del DARA', sub_btn='Abonner gratis', credit='Forsidefoto: Todd Jiang / Unsplash. Utgitt av DARA Redaksjonen.'),
 }
 
@@ -127,13 +127,19 @@ a{color:#0B1F44}a:hover{color:#8a6a2c}
 .foot .r{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
 .foot h4{margin:0;font-family:Fraunces,Georgia,serif;font-weight:800;font-size:28px;color:#fff}
 .foot p{margin:8px 0 0;font-size:15px}.foot a{color:#C9A15A}.foot .btns{display:flex;gap:12px;flex-wrap:wrap}.foot .btn{margin-top:0}
+.note{margin:10px auto 0;font-family:Inter,Arial,sans-serif;font-size:13px;color:#6b6b6b;max-width:none!important}
+.turn .note{font-family:Inter,Arial,sans-serif;font-size:13px;line-height:1.4;color:#6b6b6b;margin-top:10px}
+.subbox{margin:44px 48px 0;padding:28px;background:#efe6d4;border-radius:6px;text-align:center}
+.subbox h4{margin:0 0 14px;font-family:Fraunces,Georgia,serif;font-weight:800;font-size:26px;color:#0B1F44}
+.subbox iframe{width:100%;max-width:480px;height:150px;border:0;background:transparent}
+button.btn{border:0;cursor:pointer}.ok{font-family:Inter,Arial,sans-serif;font-size:14px;color:#C9A15A;align-self:center}
 .foot .cr{margin-top:24px;font-family:Inter,Arial,sans-serif;font-size:12px;color:#8f9bb3}
 @media(max-width:760px){
 .mast,.hero .txt,.intro,.story,.also,.nums,.foot,.turn{padding-left:22px;padding-right:22px}
 .logo{font-size:44px}.iss b{font-size:40px}
 .hero,.intro,.cards,.nums .g{grid-template-columns:1fr}.hero img{min-height:280px}
 .hero h1{font-size:34px}.story .cols{columns:1}.toc{border-left:0;padding-left:0}
-.try{margin:40px 22px 0;padding:22px}.turn p{font-size:26px}}
+.try,.subbox{margin:40px 22px 0;padding:22px}.turn p{font-size:26px}}
 """
 
 def page(t, imgp):
@@ -145,7 +151,7 @@ def page(t, imgp):
         cards += (f'<div class="card"><img src="{imgp}{img}.jpg" alt="{E(alt)}" loading="lazy"><div class="cr">{E(cr)}</div>'
                   f'<div class="k">{E(k)}</div><h3>{E(h)}</h3><p>{E(p)}</p>{src(t["srcs"] if len(keys)>1 else t["src1"], keys)}</div>')
     cards += (f'<div class="quote"><div class="lab">{E(t["over_lab"])}</div><q>{E(t["quote"])}</q>'
-              f'<p>{E(t["quote_by"])} <a href="{SRC["bg"][1]}" target="_blank" rel="noopener">Bloomberg Government</a></p></div>')
+              f'<p>{E(t["quote_by"])} <a href="{SRC["bg"][1]}" target="_blank" rel="noopener">Bloomberg Government ↗</a></p></div>')
     tries = ''.join(f'<div class="s"><div class="n">{i+1}</div><p><strong>{E(a)}</strong> {E(b)}</p></div>' for i, (a, b) in enumerate(t['tries']))
     w = t['wel']
     return f"""<!DOCTYPE html><html lang="{t['lang']}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -166,11 +172,18 @@ def page(t, imgp):
 <section class="nums"><div class="lab">{E(t['num_lab'])}</div><div class="g">{nums}</div></section>
 <section class="also"><div class="lab">{E(t['also'])}</div><div class="cards">{cards}</div></section>
 <section class="try"><div class="lab">{E(t['try_lab'])}</div><h2>{E(t['try_h'])}</h2>{tries}</section>
-<section class="turn"><div class="lab">{E(t['turn_lab'])}</div><p>{E(t['turn'])}</p><a class="btn o" href="{t['post']}#comments">{E(t['turn_btn'])}</a></section>
-<footer class="foot"><div class="r"><div><h4>{E(t['foot_h'])}</h4><p>{E(t['foot'])} <a href="https://www.daramag.com/p/sources">{E(t['lib'])}</a>. {E(t['see'])}</p></div>
-<div class="btns"><a class="btn g" href="{t['post']}">{E(t['share'])}</a><a class="btn w" href="https://www.daramag.com/subscribe">{E(t['sub_btn'])}</a></div></div>
-<div class="cr">{E(t['credit'])} <a href="https://www.daramag.com">daramag.com</a></div></footer>
-</div></body></html>"""
+<section class="turn"><div class="lab">{E(t['turn_lab'])}</div><p>{E(t['turn'])}</p><a class="btn o" href="{t['post']}#comments" target="_blank" rel="noopener">{E(t['turn_btn'])}</a><p class="note">{E(t['turn_note'])}</p></section>
+<section class="subbox"><h4>{E(t['sub_h'])}</h4><iframe src="https://www.daramag.com/embed" title="{E(t['sub_h'])}" loading="lazy" scrolling="no"></iframe><p class="note">{E(t['sub_note'])}</p></section>
+<footer class="foot"><div class="r"><div><h4>{E(t['foot_h'])}</h4><p>{E(t['foot'])} <a href="https://www.daramag.com/p/sources" target="_blank" rel="noopener">{E(t['lib'])} ↗</a>. {E(t['see'])}</p></div>
+<div class="btns"><button class="btn g" id="share" type="button">{E(t['share'])}</button><span id="ok" class="ok" hidden>{E(t['copied'])}</span></div></div>
+<div class="cr">{E(t['credit'])} <a href="https://www.daramag.com" target="_blank" rel="noopener">daramag.com ↗</a></div></footer>
+</div>
+<script>
+document.getElementById('share').addEventListener('click',async()=>{{const d={{title:document.title,url:location.href}};
+try{{if(navigator.share){{await navigator.share(d);return;}}}}catch(e){{return;}}
+try{{await navigator.clipboard.writeText(location.href);}}catch(e){{}}
+const ok=document.getElementById('ok');ok.hidden=false;setTimeout(()=>ok.hidden=true,2500);}});
+</script></body></html>"""
 
 open('01/index.html', 'w').write(page(T['en'], 'img/'))
 open('01/no/index.html', 'w').write(page(T['no'], '../img/'))
