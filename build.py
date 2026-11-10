@@ -16,7 +16,7 @@ T = {
 'en': dict(
  lang='en', title='DARA The Week · Issue 01', tagline='Data, value and you. Who profits from your data, every Saturday.',
  issue='ISSUE', date='WEEK 45 · SATURDAY 7 NOVEMBER 2026', read='5 MIN READ', other=('LES PÅ NORSK', 'no/'),
- post='https://www.daramag.com/p/dara-the-week-issue-1',
+ post='https://substack.daramag.com/p/dara-the-week-issue-1',
  cover_lab='COVER STORY', cover_h='The price of tapping “accept”: 25 billion dollars',
  cover_sub='A US judge put a price on what Meta promised about your data.',
  cover_alt='A hand holding a smartphone against a bright background',
@@ -38,12 +38,12 @@ T = {
  over_lab='OVERHEARD', quote='“The clearly intentional and systematic nature of Facebook’s repeated misstatements.”', quote_by='Judge Francis Mathew, in his ruling ordering Meta to pay 25 billion dollars.',
  try_lab='TRY THIS WEEK', try_h='Three small checks, five minutes',
  tries=[('Open the ad settings in Facebook or Instagram.','Which choice did you make, and do you remember making it?'),('Check your smartwatch or fitness app.','Which apps get your health data?'),('Have you taken a DNA test?','Check whether you can download your own DNA data. In Norway and the EU, you have the right to a copy.')],
- turn_lab='YOUR TURN', turn='What would you have charged Meta for your data last year?', turn_btn='Discuss on DARA ↗', turn_note='Opens the conversation on daramag.com in a new tab.', sub_h='Get DARA The Week every Saturday', sub_note='Free. Unsubscribe whenever you like.', copied='Link copied', copy='Copy link', nav_all='All stories ↗', nav_sub='Subscribe for free', more_h='More from DARA', more_p='New stories about your data every week, in English and Norwegian.', more_btn='Read more articles on daramag.com ↗', more_url='https://www.daramag.com/archive',
+ turn_lab='YOUR TURN', turn='What would you have charged Meta for your data last year?', turn_btn='Discuss on DARA ↗', turn_note='Opens the conversation on daramag.com in a new tab.', sub_h='Get DARA The Week every Saturday', sub_note='Free. Unsubscribe whenever you like.', copied='Link copied', copy='Copy link', nav_all='All stories ↗', nav_sub='Subscribe for free', more_h='More from DARA', more_p='New stories about your data every week, in English and Norwegian.', more_btn='Read more articles on daramag.com ↗', more_url='https://daramag.com/en/all-stories/',
  foot_h='Know someone who should read this?', foot='Send it to one person. All our sources are in the', lib='DARA Source Library', see='See you next Saturday.', share='Share DARA', sub_btn='Subscribe for free', credit='Cover photo: Todd Jiang / Unsplash. Published by DARA Redaksjonen.', ed_lab='Editor:', ed_url='https://tovetrond.no/en/'),
 'no': dict(
  lang='no', title='DARA The Week · Utgave 01', tagline='Data, verdi og deg. Hvem som tjener på dataene dine, hver lørdag.',
  issue='UTGAVE', date='UKE 45 · LØRDAG 7. NOVEMBER 2026', read='5 MIN LESING', other=('READ IN ENGLISH', '../'),
- post='https://www.daramag.com/p/dara-the-week-utgave-1',
+ post='https://substack.daramag.com/p/dara-the-week-utgave-1',
  cover_lab='UKENS SAK', cover_h='Prisen for å trykke «godta»: 25 milliarder dollar',
  cover_sub='En dommer i USA satte prisen på det Meta lovet om dataene dine.',
  cover_alt='En hånd holder en mobil mot en lys bakgrunn',
@@ -65,7 +65,7 @@ T = {
  over_lab='HØRT DENNE UKA', quote='«The clearly intentional and systematic nature of Facebook’s repeated misstatements.»', quote_by='Dommer Francis Mathew i dommen mot Meta. På norsk: at Facebooks gjentatte villedende utsagn var tydelig bevisste og systematiske.',
  try_lab='PRØV DENNE UKA', try_h='Tre små sjekker, fem minutter',
  tries=[('Åpne annonseinnstillingene i Facebook eller Instagram.','Hvilket valg tok du, og husker du at du tok det?'),('Sjekk smartklokka eller treningsappen.','Hvilke apper får helsedataene dine?'),('Har du tatt en DNA-test?','Sjekk om du kan laste ned dine egne DNA-data. I Norge og EU har du rett til en kopi.')],
- turn_lab='DIN TUR', turn='Hva ville du tatt betalt av Meta for dataene dine i fjor?', turn_btn='Diskuter på DARA ↗', turn_note='Åpner samtalen på daramag.com i en ny fane.', sub_h='Få DARA The Week hver lørdag', sub_note='Gratis. Du kan melde deg av når du vil.', copied='Lenken er kopiert', copy='Kopier lenke', nav_all='Alle saker ↗', nav_sub='Abonner gratis', more_h='Flere saker fra DARA', more_p='Nye saker om dataene dine hver uke, på norsk og engelsk.', more_btn='Les flere artikler på daramag.com ↗', more_url='https://www.daramag.com/s/norsk',
+ turn_lab='DIN TUR', turn='Hva ville du tatt betalt av Meta for dataene dine i fjor?', turn_btn='Diskuter på DARA ↗', turn_note='Åpner samtalen på daramag.com i en ny fane.', sub_h='Få DARA The Week hver lørdag', sub_note='Gratis. Du kan melde deg av når du vil.', copied='Lenken er kopiert', copy='Kopier lenke', nav_all='Alle saker ↗', nav_sub='Abonner gratis', more_h='Flere saker fra DARA', more_p='Nye saker om dataene dine hver uke, på norsk og engelsk.', more_btn='Les flere artikler på daramag.com ↗', more_url='https://daramag.com/no/alle-saker/',
  foot_h='Kjenner du noen som burde lese dette?', foot='Send det til én person. Alle kildene våre ligger i', lib='DARA-kildebiblioteket', see='Vi ses neste lørdag.', share='Del DARA', sub_btn='Abonner gratis', credit='Forsidefoto: Todd Jiang / Unsplash. Utgitt av DARA Redaksjonen.', ed_lab='Redaktør:', ed_url='https://tovetrond.no/'),
 }
 
@@ -174,7 +174,7 @@ def page(t, imgp):
 <meta property="og:title" content="{E(t['title'])}: {E(t['cover_h'])}"><meta property="og:description" content="{E(t['cover_sub'])}"><meta property="og:image" content="https://magasin.daramag.com/01/img/forside-{t['lang']}.jpg"><meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
 <style>{CSS}</style></head><body><div class="wrap">
-<nav class="topbar"><a href="https://www.daramag.com" target="_blank" rel="noopener"><b>daramag.com</b></a><span><a href="{t['more_url']}" target="_blank" rel="noopener">{E(t['nav_all'])}</a><a href="#abonner">{E(t['nav_sub'])}</a></span></nav>
+<nav class="topbar"><a href="https://daramag.com/{t['lang']}/" target="_blank" rel="noopener"><b>daramag.com</b></a><span><a href="{t['more_url']}" target="_blank" rel="noopener">{E(t['nav_all'])}</a><a href="#abonner">{E(t['nav_sub'])}</a></span></nav>
 <header class="mast"><div class="top"><div><div class="logo">DARA <span>The Week</span></div><div class="tag">{E(t['tagline'])}</div></div>
 <div class="iss"><small>{E(t['issue'])}</small><b>01</b></div></div>
 <div class="bot"><span>{E(t['date'])}</span><span>{E(t['read'])} · <a href="{t['other'][1]}">{E(t['other'][0])}</a></span></div></header>
@@ -190,11 +190,11 @@ def page(t, imgp):
 <section class="more"><div><h4>{E(t['more_h'])}</h4><p>{E(t['more_p'])}</p></div><a class="btn g" href="{t['more_url']}" target="_blank" rel="noopener">{E(t['more_btn'])}</a></section>
 <section class="try"><div class="lab">{E(t['try_lab'])}</div><h2>{E(t['try_h'])}</h2>{tries}</section>
 <section class="turn"><div class="lab">{E(t['turn_lab'])}</div><p>{E(t['turn'])}</p><a class="btn o" href="{t['post']}#comments" target="_blank" rel="noopener">{E(t['turn_btn'])}</a><p class="note">{E(t['turn_note'])}</p></section>
-<section class="subbox" id="abonner"><h4>{E(t['sub_h'])}</h4><iframe src="https://www.daramag.com/embed" title="{E(t['sub_h'])}" loading="lazy" scrolling="no"></iframe><p class="note">{E(t['sub_note'])}</p></section>
-<footer class="foot"><div class="r"><div><h4>{E(t['foot_h'])}</h4><p>{E(t['foot'])} <a href="https://www.daramag.com/p/sources" target="_blank" rel="noopener">{E(t['lib'])} ↗</a>. {E(t['see'])}</p></div>
+<section class="subbox" id="abonner"><h4>{E(t['sub_h'])}</h4><iframe src="https://substack.daramag.com/embed" title="{E(t['sub_h'])}" loading="lazy" scrolling="no"></iframe><p class="note">{E(t['sub_note'])}</p></section>
+<footer class="foot"><div class="r"><div><h4>{E(t['foot_h'])}</h4><p>{E(t['foot'])} <a href="https://substack.daramag.com/p/sources" target="_blank" rel="noopener">{E(t['lib'])} ↗</a>. {E(t['see'])}</p></div>
 <div class="btns"><button class="btn g" id="copy" type="button">{E(t['copy'])}</button><button class="btn w" id="share" type="button" hidden>{E(t['share'])}</button><span id="ok" class="ok" hidden>{E(t['copied'])}</span></div></div>
 <nav class="lenker">{lenker}</nav>
-<div class="cr">{E(t['credit'])} {E(t['ed_lab'])} <a href="{t['ed_url']}" rel="author">Trond Slyngstad</a>. <a href="https://www.daramag.com" target="_blank" rel="noopener">daramag.com ↗</a></div></footer>
+<div class="cr">{E(t['credit'])} {E(t['ed_lab'])} <a href="{t['ed_url']}" rel="author">Trond Slyngstad</a>. <a href="https://daramag.com/{t['lang']}/" target="_blank" rel="noopener">daramag.com ↗</a></div></footer>
 </div>
 <script>
 const ok=document.getElementById('ok'),sh=document.getElementById('share');
