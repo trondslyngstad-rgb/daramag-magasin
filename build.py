@@ -138,6 +138,7 @@ html{scroll-behavior:smooth}
 .subbox h4{margin:0 0 14px;font-family:Fraunces,Georgia,serif;font-weight:800;font-size:26px;color:#0B1F44}
 .subbox iframe{width:100%;max-width:480px;height:150px;border:0;background:#F6F8FC;display:block;margin:0 auto}
 button.btn{border:0;cursor:pointer}.ok{font-family:Inter,Arial,sans-serif;font-size:14px;color:#C9A15A;align-self:center}
+.foot .lenker{margin-top:28px;padding-top:20px;border-top:1px solid #23375e;font-family:Inter,Arial,sans-serif;font-size:14px;line-height:2;color:#8f9bb3}.foot .lenker a{text-decoration:none}.foot .lenker a:hover{text-decoration:underline}.foot .lenker .sub{display:block;font-size:13px}
 .foot .cr{margin-top:24px;font-family:Inter,Arial,sans-serif;font-size:12px;color:#8f9bb3}
 @media(max-width:760px){
 .topbar{padding:10px 22px;font-size:12px}.topbar span{gap:12px}
@@ -148,7 +149,15 @@ button.btn{border:0;cursor:pointer}.ok{font-family:Inter,Arial,sans-serif;font-s
 .try,.subbox,.more{margin:40px 22px 0;padding:22px}.turn p{font-size:26px}}
 """
 
+D = 'https://daramag.com'
+LENKER = {
+ 'en': ([('All stories', '/en/all-stories/'), ('What is the participation economy?', '/en/what-is-the-participation-economy/'), ('About DARA', '/en/about/'), ('Privacy', '/en/privacy/')], 'Follow DARA on Substack'),
+ 'no': ([('Alle saker', '/no/alle-saker/'), ('Hva er deltakerøkonomi?', '/no/hva-er-deltakerokonomi/'), ('Om DARA', '/no/about/'), ('Personvern', '/no/personvern/')], 'Følg DARA på Substack'),
+}
+
 def page(t, imgp):
+    ln, sub = LENKER[t['lang']]
+    lenker = ' · '.join(f'<a href="{D}{u}">{E(n)}</a>' for n, u in ln) + f'<span class="sub"><a href="https://substack.daramag.com" target="_blank" rel="noopener">{E(sub)} ↗</a></span>'
     toc = ''.join(f'<div><i>{i+1}</i><span>{E(x)}</span></div>' for i, x in enumerate(t['toc']))
     story = ''.join(f'<p>{E(p)}</p>' for p in t['story']) + f'<p class="end">{E(t["story_end"])}</p>'
     nums = ''.join(f'<div><b>{E(n)}</b><p>{E(d)}</p><small>{E(s)}</small></div>' for n, d, s in t['nums'])
@@ -184,6 +193,7 @@ def page(t, imgp):
 <section class="subbox" id="abonner"><h4>{E(t['sub_h'])}</h4><iframe src="https://www.daramag.com/embed" title="{E(t['sub_h'])}" loading="lazy" scrolling="no"></iframe><p class="note">{E(t['sub_note'])}</p></section>
 <footer class="foot"><div class="r"><div><h4>{E(t['foot_h'])}</h4><p>{E(t['foot'])} <a href="https://www.daramag.com/p/sources" target="_blank" rel="noopener">{E(t['lib'])} ↗</a>. {E(t['see'])}</p></div>
 <div class="btns"><button class="btn g" id="copy" type="button">{E(t['copy'])}</button><button class="btn w" id="share" type="button" hidden>{E(t['share'])}</button><span id="ok" class="ok" hidden>{E(t['copied'])}</span></div></div>
+<nav class="lenker">{lenker}</nav>
 <div class="cr">{E(t['credit'])} {E(t['ed_lab'])} <a href="{t['ed_url']}" rel="author">Trond Slyngstad</a>. <a href="https://www.daramag.com" target="_blank" rel="noopener">daramag.com ↗</a></div></footer>
 </div>
 <script>
