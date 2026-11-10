@@ -39,7 +39,7 @@ T = {
  try_lab='TRY THIS WEEK', try_h='Three small checks, five minutes',
  tries=[('Open the ad settings in Facebook or Instagram.','Which choice did you make, and do you remember making it?'),('Check your smartwatch or fitness app.','Which apps get your health data?'),('Have you taken a DNA test?','Check whether you can download your own DNA data. In Norway and the EU, you have the right to a copy.')],
  turn_lab='YOUR TURN', turn='What would you have charged Meta for your data last year?', turn_btn='Discuss on DARA ↗', turn_note='Opens the conversation on daramag.com in a new tab.', sub_h='Get DARA The Week every Saturday', sub_note='Free. Unsubscribe whenever you like.', copied='Link copied', copy='Copy link', nav_all='All stories ↗', nav_sub='Subscribe for free', more_h='More from DARA', more_p='New stories about your data every week, in English and Norwegian.', more_btn='Read more articles on daramag.com ↗', more_url='https://www.daramag.com/archive',
- foot_h='Know someone who should read this?', foot='Send it to one person. All our sources are in the', lib='DARA Source Library', see='See you next Saturday.', share='Share DARA', sub_btn='Subscribe for free', credit='Cover photo: Todd Jiang / Unsplash. Published by DARA Redaksjonen.'),
+ foot_h='Know someone who should read this?', foot='Send it to one person. All our sources are in the', lib='DARA Source Library', see='See you next Saturday.', share='Share DARA', sub_btn='Subscribe for free', credit='Cover photo: Todd Jiang / Unsplash. Published by DARA Redaksjonen.', ed_lab='Editor:', ed_url='https://tovetrond.no/en/'),
 'no': dict(
  lang='no', title='DARA The Week · Utgave 01', tagline='Data, verdi og deg. Hvem som tjener på dataene dine, hver lørdag.',
  issue='UTGAVE', date='UKE 45 · LØRDAG 7. NOVEMBER 2026', read='5 MIN LESING', other=('READ IN ENGLISH', '../'),
@@ -66,7 +66,7 @@ T = {
  try_lab='PRØV DENNE UKA', try_h='Tre små sjekker, fem minutter',
  tries=[('Åpne annonseinnstillingene i Facebook eller Instagram.','Hvilket valg tok du, og husker du at du tok det?'),('Sjekk smartklokka eller treningsappen.','Hvilke apper får helsedataene dine?'),('Har du tatt en DNA-test?','Sjekk om du kan laste ned dine egne DNA-data. I Norge og EU har du rett til en kopi.')],
  turn_lab='DIN TUR', turn='Hva ville du tatt betalt av Meta for dataene dine i fjor?', turn_btn='Diskuter på DARA ↗', turn_note='Åpner samtalen på daramag.com i en ny fane.', sub_h='Få DARA The Week hver lørdag', sub_note='Gratis. Du kan melde deg av når du vil.', copied='Lenken er kopiert', copy='Kopier lenke', nav_all='Alle saker ↗', nav_sub='Abonner gratis', more_h='Flere saker fra DARA', more_p='Nye saker om dataene dine hver uke, på norsk og engelsk.', more_btn='Les flere artikler på daramag.com ↗', more_url='https://www.daramag.com/s/norsk',
- foot_h='Kjenner du noen som burde lese dette?', foot='Send det til én person. Alle kildene våre ligger i', lib='DARA-kildebiblioteket', see='Vi ses neste lørdag.', share='Del DARA', sub_btn='Abonner gratis', credit='Forsidefoto: Todd Jiang / Unsplash. Utgitt av DARA Redaksjonen.'),
+ foot_h='Kjenner du noen som burde lese dette?', foot='Send det til én person. Alle kildene våre ligger i', lib='DARA-kildebiblioteket', see='Vi ses neste lørdag.', share='Del DARA', sub_btn='Abonner gratis', credit='Forsidefoto: Todd Jiang / Unsplash. Utgitt av DARA Redaksjonen.', ed_lab='Redaktør:', ed_url='https://tovetrond.no/'),
 }
 
 CSS = """
@@ -184,7 +184,7 @@ def page(t, imgp):
 <section class="subbox" id="abonner"><h4>{E(t['sub_h'])}</h4><iframe src="https://www.daramag.com/embed" title="{E(t['sub_h'])}" loading="lazy" scrolling="no"></iframe><p class="note">{E(t['sub_note'])}</p></section>
 <footer class="foot"><div class="r"><div><h4>{E(t['foot_h'])}</h4><p>{E(t['foot'])} <a href="https://www.daramag.com/p/sources" target="_blank" rel="noopener">{E(t['lib'])} ↗</a>. {E(t['see'])}</p></div>
 <div class="btns"><button class="btn g" id="copy" type="button">{E(t['copy'])}</button><button class="btn w" id="share" type="button" hidden>{E(t['share'])}</button><span id="ok" class="ok" hidden>{E(t['copied'])}</span></div></div>
-<div class="cr">{E(t['credit'])} <a href="https://www.daramag.com" target="_blank" rel="noopener">daramag.com ↗</a></div></footer>
+<div class="cr">{E(t['credit'])} {E(t['ed_lab'])} <a href="{t['ed_url']}" rel="author">Trond Slyngstad</a>. <a href="https://www.daramag.com" target="_blank" rel="noopener">daramag.com ↗</a></div></footer>
 </div>
 <script>
 const ok=document.getElementById('ok'),sh=document.getElementById('share');
