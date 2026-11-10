@@ -38,7 +38,7 @@ T = {
  over_lab='OVERHEARD', quote='“The clearly intentional and systematic nature of Facebook’s repeated misstatements.”', quote_by='Judge Francis Mathew, in his ruling ordering Meta to pay 25 billion dollars.',
  try_lab='TRY THIS WEEK', try_h='Three small checks, five minutes',
  tries=[('Open the ad settings in Facebook or Instagram.','Which choice did you make, and do you remember making it?'),('Check your smartwatch or fitness app.','Which apps get your health data?'),('Have you taken a DNA test?','Check whether you can download your own DNA data. In Norway and the EU, you have the right to a copy.')],
- turn_lab='YOUR TURN', turn='What would you have charged Meta for your data last year?', turn_btn='Discuss on DARA ↗', turn_note='Opens the conversation on daramag.com in a new tab.', sub_h='Get DARA The Week every Saturday', sub_note='Free. Unsubscribe whenever you like.', copied='Link copied', copy='Copy link', nav_all='All stories ↗', nav_sub='Subscribe for free', more_h='More from DARA', more_p='New stories about your data every week, in English and Norwegian.', more_btn='Read more articles on daramag.com ↗', more_url='https://daramag.com/en/all-stories/',
+ turn_lab='YOUR TURN', turn='What would you have charged Meta for your data last year?', turn_btn='Discuss on DARA ↗', turn_note='Opens the conversation on daramag.com in a new tab.', sub_h='Get DARA The Week every Saturday', sub_note='Free. We only use your email address for The Week.', sub_ph='Your email address', sub_btn2='Subscribe', sub_sending='Sending ...', sub_ok='Almost done. Check your email and tap “Confirm subscription”.', sub_spam="Can't find it? Check your spam folder.", sub_bad='Please check your email address.', sub_err="That didn't work. Try again in a moment.", sub_priv='https://daramag.com/en/privacy/', sub_priv_t='Read about privacy.', copied='Link copied', copy='Copy link', nav_all='All stories ↗', nav_sub='Subscribe for free', more_h='More from DARA', more_p='New stories about your data every week, in English and Norwegian.', more_btn='Read more articles on daramag.com ↗', more_url='https://daramag.com/en/all-stories/',
  foot_h='Know someone who should read this?', foot='Send it to one person. All our sources are in the', lib='DARA Source Library', see='See you next Saturday.', share='Share DARA', sub_btn='Subscribe for free', credit='Cover photo: Todd Jiang / Unsplash. Published by DARA Redaksjonen.', ed_lab='Editor:', ed_url='https://tovetrond.no/en/'),
 'no': dict(
  lang='no', title='DARA The Week · Utgave 01', tagline='Data, verdi og deg. Hvem som tjener på dataene dine, hver lørdag.',
@@ -65,7 +65,7 @@ T = {
  over_lab='HØRT DENNE UKA', quote='«The clearly intentional and systematic nature of Facebook’s repeated misstatements.»', quote_by='Dommer Francis Mathew i dommen mot Meta. På norsk: at Facebooks gjentatte villedende utsagn var tydelig bevisste og systematiske.',
  try_lab='PRØV DENNE UKA', try_h='Tre små sjekker, fem minutter',
  tries=[('Åpne annonseinnstillingene i Facebook eller Instagram.','Hvilket valg tok du, og husker du at du tok det?'),('Sjekk smartklokka eller treningsappen.','Hvilke apper får helsedataene dine?'),('Har du tatt en DNA-test?','Sjekk om du kan laste ned dine egne DNA-data. I Norge og EU har du rett til en kopi.')],
- turn_lab='DIN TUR', turn='Hva ville du tatt betalt av Meta for dataene dine i fjor?', turn_btn='Diskuter på DARA ↗', turn_note='Åpner samtalen på daramag.com i en ny fane.', sub_h='Få DARA The Week hver lørdag', sub_note='Gratis. Du kan melde deg av når du vil.', copied='Lenken er kopiert', copy='Kopier lenke', nav_all='Alle saker ↗', nav_sub='Abonner gratis', more_h='Flere saker fra DARA', more_p='Nye saker om dataene dine hver uke, på norsk og engelsk.', more_btn='Les flere artikler på daramag.com ↗', more_url='https://daramag.com/no/alle-saker/',
+ turn_lab='DIN TUR', turn='Hva ville du tatt betalt av Meta for dataene dine i fjor?', turn_btn='Diskuter på DARA ↗', turn_note='Åpner samtalen på daramag.com i en ny fane.', sub_h='Få DARA The Week hver lørdag', sub_note='Gratis. Vi bruker e-postadressen din bare til The Week.', sub_ph='E-postadressen din', sub_btn2='Abonner', sub_sending='Sender ...', sub_ok='Nesten ferdig. Sjekk e-posten din og trykk «Bekreft påmeldingen».', sub_spam='Ser du den ikke? Se i søppelposten.', sub_bad='Sjekk e-postadressen.', sub_err='Det gikk ikke. Prøv igjen om litt.', sub_priv='https://daramag.com/no/personvern/', sub_priv_t='Les om personvern.', copied='Lenken er kopiert', copy='Kopier lenke', nav_all='Alle saker ↗', nav_sub='Abonner gratis', more_h='Flere saker fra DARA', more_p='Nye saker om dataene dine hver uke, på norsk og engelsk.', more_btn='Les flere artikler på daramag.com ↗', more_url='https://daramag.com/no/alle-saker/',
  foot_h='Kjenner du noen som burde lese dette?', foot='Send det til én person. Alle kildene våre ligger i', lib='DARA-kildebiblioteket', see='Vi ses neste lørdag.', share='Del DARA', sub_btn='Abonner gratis', credit='Forsidefoto: Todd Jiang / Unsplash. Utgitt av DARA Redaksjonen.', ed_lab='Redaktør:', ed_url='https://tovetrond.no/'),
 }
 
@@ -136,7 +136,7 @@ html{scroll-behavior:smooth}
 .turn .note{font-family:Inter,Arial,sans-serif;font-size:13px;line-height:1.4;color:#6b6b6b;margin-top:10px}
 .subbox{margin:44px 48px 0;padding:30px 28px 22px;background:#F6F8FC;border:1px solid #dfe3ec;border-radius:6px;text-align:center}
 .subbox h4{margin:0 0 14px;font-family:Fraunces,Georgia,serif;font-weight:800;font-size:26px;color:#0B1F44}
-.subbox iframe{width:100%;max-width:480px;height:150px;border:0;background:#F6F8FC;display:block;margin:0 auto}
+.subbox .pm{display:flex;gap:10px;max-width:480px;margin:0 auto;flex-wrap:wrap}.subbox .pm input[type=email]{flex:1 1 14rem;min-height:48px;border:1px solid #7a8394;border-radius:6px;padding:0 14px;font:400 16px/1 Inter,Arial,sans-serif;color:#0B1F44;background:#fff}.subbox .pm input[aria-invalid=true]{border-color:#a12a2a}.subbox .pm .btn{margin-top:0;min-height:48px}.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}.pm-s{margin:10px auto 0;font:600 15px/1.4 Inter,Arial,sans-serif;color:#0B1F44;max-width:480px}.pm-s:focus{outline:none}.pm-s small{font-weight:400}
 button.btn{border:0;cursor:pointer}.ok{font-family:Inter,Arial,sans-serif;font-size:14px;color:#C9A15A;align-self:center}
 .foot .lenker{margin-top:28px;padding-top:20px;border-top:1px solid #23375e;font-family:Inter,Arial,sans-serif;font-size:14px;line-height:2;color:#8f9bb3}.foot .lenker a{text-decoration:none}.foot .lenker a:hover{text-decoration:underline}.foot .lenker .sub{display:block;font-size:13px}
 .foot .cr{margin-top:24px;font-family:Inter,Arial,sans-serif;font-size:12px;color:#8f9bb3}
@@ -154,6 +154,10 @@ LENKER = {
  'en': ([('All stories', '/en/all-stories/'), ('What is the participation economy?', '/en/what-is-the-participation-economy/'), ('About DARA', '/en/about/'), ('Privacy', '/en/privacy/')], 'Follow DARA on Substack'),
  'no': ([('Alle saker', '/no/alle-saker/'), ('Hva er deltakerøkonomi?', '/no/hva-er-deltakerokonomi/'), ('Om DARA', '/no/about/'), ('Personvern', '/no/personvern/')], 'Følg DARA på Substack'),
 }
+
+import json as _json
+def J(x):
+    return _json.dumps(x, ensure_ascii=False).replace('<', '\\u003c')
 
 def page(t, imgp):
     ln, sub = LENKER[t['lang']]
@@ -190,7 +194,9 @@ def page(t, imgp):
 <section class="more"><div><h4>{E(t['more_h'])}</h4><p>{E(t['more_p'])}</p></div><a class="btn g" href="{t['more_url']}" target="_blank" rel="noopener">{E(t['more_btn'])}</a></section>
 <section class="try"><div class="lab">{E(t['try_lab'])}</div><h2>{E(t['try_h'])}</h2>{tries}</section>
 <section class="turn"><div class="lab">{E(t['turn_lab'])}</div><p>{E(t['turn'])}</p><a class="btn o" href="{t['post']}#comments" target="_blank" rel="noopener">{E(t['turn_btn'])}</a><p class="note">{E(t['turn_note'])}</p></section>
-<section class="subbox" id="abonner"><h4>{E(t['sub_h'])}</h4><iframe src="https://substack.daramag.com/embed" title="{E(t['sub_h'])}" loading="lazy" scrolling="no"></iframe><p class="note">{E(t['sub_note'])}</p></section>
+<section class="subbox" id="abonner"><h4>{E(t['sub_h'])}</h4>
+<form class="pm" action="https://daramag.com/api/abonner" method="post" novalidate><label class="sr" for="pm-e">{E(t['sub_ph'])}</label><input class="sr" name="nettsted" type="text" tabindex="-1" autocomplete="off" aria-hidden="true"><input type="hidden" name="sprak" value="{t['lang']}"><input type="hidden" name="kilde" value="theweek"><input type="hidden" name="tilbake" value=""><input id="pm-e" name="epost" type="email" autocomplete="email" placeholder="{E(t['sub_ph'])}" required aria-describedby="pm-s"><button class="btn g" type="submit">{E(t['sub_btn2'])}</button></form>
+<p class="pm-s" id="pm-s" role="status" aria-live="polite" tabindex="-1"></p><p class="note">{E(t['sub_note'])} <a href="{t['sub_priv']}">{E(t['sub_priv_t'])}</a></p></section>
 <footer class="foot"><div class="r"><div><h4>{E(t['foot_h'])}</h4><p>{E(t['foot'])} <a href="https://substack.daramag.com/p/sources" target="_blank" rel="noopener">{E(t['lib'])} ↗</a>. {E(t['see'])}</p></div>
 <div class="btns"><button class="btn g" id="copy" type="button">{E(t['copy'])}</button><button class="btn w" id="share" type="button" hidden>{E(t['share'])}</button><span id="ok" class="ok" hidden>{E(t['copied'])}</span></div></div>
 <nav class="lenker">{lenker}</nav>
@@ -201,6 +207,13 @@ const ok=document.getElementById('ok'),sh=document.getElementById('share');
 document.getElementById('copy').addEventListener('click',async()=>{{
 try{{await navigator.clipboard.writeText(location.href);}}catch(e){{const i=document.createElement('input');i.value=location.href;document.body.appendChild(i);i.select();document.execCommand('copy');i.remove();}}
 ok.hidden=false;setTimeout(()=>ok.hidden=true,2500);}});
+(function(){{var f=document.querySelector('.subbox .pm');if(!f)return;var fe=f.querySelector('[name=epost]'),k=f.querySelector('button'),st=document.getElementById('pm-s'),kt=k.textContent;f.querySelector('[name=tilbake]').value=location.href;
+fe.addEventListener('input',function(){{fe.removeAttribute('aria-invalid');st.textContent='';}});
+f.addEventListener('submit',function(e){{e.preventDefault();var ep=fe.value.trim();if(!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]{{2,}}$/.test(ep)){{fe.setAttribute('aria-invalid','true');st.textContent={J(t['sub_bad'])};fe.focus();return;}}
+k.disabled=true;k.textContent={J(t['sub_sending'])};var v=function(n){{return f.querySelector('[name='+n+']').value;}};
+fetch(f.action,{{method:'POST',headers:{{'Content-Type':'application/json'}},body:JSON.stringify({{epost:ep,sprak:v('sprak'),kilde:'theweek',nettsted:v('nettsted')}})}}).then(function(r){{return r.ok?r.json():Promise.reject(r);}})
+.then(function(){{f.hidden=true;st.textContent={J(t['sub_ok'])};var sm=document.createElement('small');sm.textContent={J(t['sub_spam'])};st.appendChild(document.createElement('br'));st.appendChild(sm);st.focus();}})
+.catch(function(r){{st.textContent=(r&&r.status===400)?{J(t['sub_bad'])}:{J(t['sub_err'])};}}).then(function(){{k.disabled=false;k.textContent=kt;}});}});}})();
 if(navigator.share){{sh.hidden=false;sh.addEventListener('click',()=>navigator.share({{title:document.title,url:location.href}}).catch(()=>{{}}));}}
 </script></body></html>"""
 
