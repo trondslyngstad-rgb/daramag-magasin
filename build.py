@@ -197,7 +197,7 @@ def page(t, imgp):
 <section class="subbox" id="abonner"><h4>{E(t['sub_h'])}</h4>
 <form class="pm" action="https://daramag.com/api/abonner" method="post" novalidate><label class="sr" for="pm-e">{E(t['sub_ph'])}</label><input class="sr" name="nettsted" type="text" tabindex="-1" autocomplete="off" aria-hidden="true"><input type="hidden" name="sprak" value="{t['lang']}"><input type="hidden" name="kilde" value="theweek"><input type="hidden" name="tilbake" value=""><input id="pm-e" name="epost" type="email" autocomplete="email" placeholder="{E(t['sub_ph'])}" required aria-describedby="pm-s"><button class="btn g" type="submit">{E(t['sub_btn2'])}</button></form>
 <p class="pm-s" id="pm-s" role="status" aria-live="polite" tabindex="-1"></p><p class="note">{E(t['sub_note'])} <a href="{t['sub_priv']}">{E(t['sub_priv_t'])}</a></p></section>
-<footer class="foot"><div class="r"><div><h4>{E(t['foot_h'])}</h4><p>{E(t['foot'])} <a href="https://substack.daramag.com/p/sources" target="_blank" rel="noopener">{E(t['lib'])} ↗</a>. {E(t['see'])}</p></div>
+<footer class="foot"><div class="r"><div><h4>{E(t['foot_h'])}</h4><p>{E(t['foot'])} <a href="https://daramag.com/{t['lang']}/{'kilder' if t['lang']=='no' else 'sources'}/" target="_blank" rel="noopener">{E(t['lib'])} ↗</a>. {E(t['see'])}</p></div>
 <div class="btns"><button class="btn g" id="copy" type="button">{E(t['copy'])}</button><button class="btn w" id="share" type="button" hidden>{E(t['share'])}</button><span id="ok" class="ok" hidden>{E(t['copied'])}</span></div></div>
 <nav class="lenker">{lenker}</nav>
 <div class="cr"><p class="ki">{E(t['ki'])}</p>{E(t['credit'])} <a href="https://daramag.com/{t['lang']}/" target="_blank" rel="noopener">daramag.com ↗</a></div></footer>
